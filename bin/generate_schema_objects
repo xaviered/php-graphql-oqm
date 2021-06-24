@@ -18,6 +18,7 @@ if (!$autoLoadFound) {
 
 use GraphQL\Client;
 use gmostafa\GraphQL\SchemaGenerator\SchemaClassGenerator;
+use gmostafa\GraphQL\SchemaGenerator\CodeGenerator\ObjectBuilderInterface;
 
 $endpointUrl = readline('GraphlQL endpoint URL: ');
 
@@ -31,8 +32,12 @@ if (!empty($authHeaderName)) {
 $customWriteDir = readline('Custom classes writing dir (optional): ');
 if (empty($customWriteDir)) $customWriteDir = '';
 
+$defaultNamespace = ObjectBuilderInterface::DEFAULT_NAMESPACE;
+$customNamespace = readline('Custom namespace prefix (default: ' . ObjectBuilderInterface::DEFAULT_NAMESPACE . '): ');
+if (empty($customNamespace)) $customNamespace = ObjectBuilderInterface::DEFAULT_NAMESPACE;
+
 $client  = new Client($endpointUrl, $authHeaders);
-$scanner = new SchemaClassGenerator($client, $customWriteDir);
+$scanner = new SchemaClassGenerator($client, $customWriteDir, $customNamespace);
 
 print "-------------------------------------------\n";
 print "Generating schema objects from schema types\n";

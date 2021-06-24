@@ -29,10 +29,14 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "GraphQL\\Tests\\": "tests/"
+            "gmostafa\\GraphQL\\Tests\\": "tests/",
+            "testing\\GraphQL\\SchemaObject\\": "schema_object/"
         }
     },
     "bin": ["bin/generate_schema_objects"],
+    "scripts": {
+        "test": "./vendor/bin/phpunit tests"
+    },
     "require": {
         "php": "^7.1 || ^8.0",
         "gmostafa/php-graphql-client": "^1.6 || ^1.9"
