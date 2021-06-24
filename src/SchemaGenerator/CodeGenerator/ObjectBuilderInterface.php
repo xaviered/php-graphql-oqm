@@ -1,6 +1,6 @@
 <?php
 
-namespace GraphQL\SchemaGenerator\CodeGenerator;
+namespace gmostafa\GraphQL\SchemaGenerator\CodeGenerator;
 
 /**
  * Interface ObjectBuilderInterface
@@ -9,7 +9,7 @@ namespace GraphQL\SchemaGenerator\CodeGenerator;
  */
 interface ObjectBuilderInterface
 {
-    const DEFAULT_NAMESPACE = 'GraphQL\\SchemaObject';
+    const DEFAULT_NAMESPACE = 'gmostafa\\GraphQL\\SchemaObject';
 
     /**
      * @return void

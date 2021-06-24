@@ -1,8 +1,8 @@
 <?php
 
-namespace GraphQL\SchemaGenerator\CodeGenerator;
+namespace gmostafa\GraphQL\SchemaGenerator\CodeGenerator;
 
-use GraphQL\SchemaGenerator\CodeGenerator\CodeFile\ClassFile;
+use gmostafa\GraphQL\SchemaGenerator\CodeGenerator\CodeFile\ClassFile;
 use GraphQL\Util\StringLiteralFormatter;
 
 /**
@@ -26,7 +26,7 @@ class InputObjectClassBuilder extends ObjectClassBuilder
         $this->classFile = new ClassFile($writeDir, $className);
         $this->classFile->setNamespace($namespace);
         if ($namespace !== self::DEFAULT_NAMESPACE) {
-            $this->classFile->addImport('GraphQL\\SchemaObject\\InputObject');
+            $this->classFile->addImport('gmostafa\\GraphQL\\SchemaObject\\InputObject');
         }
         $this->classFile->extendsClass('InputObject');
     }
