@@ -31,4 +31,4 @@ $root->selectPing();
 
 $result = $client->runQuery($root->getQuery());
 
-print_r(['r' => $result]);
+print_r(['result' => $result->getResults()]);
